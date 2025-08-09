@@ -11,10 +11,4 @@ jobs:
     steps:
       - name: Ping root domain
         run: |
-          curl -s https://pasmeal.onrender.com/ > /dev/null
-      - name: Ping register endpoint
-        run: |
-          curl -s https://pasmeal.onrender.com/api/register > /dev/null
-      - name: Ping login endpoint
-        run: |
-          curl -s https://pasmeal.onrender.com/api/login > /dev/null
+          curl -s --max-time 10 https://pasmeal.onrender.com/ > /dev/null
